@@ -1,0 +1,19 @@
+{
+  "name": "Policy Reporter",
+  
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+
+  "mounts": [
+    "source=${localEnv:HOME}/.kube/config,target=/root/.kube/config,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.devcontainer/config.yaml,target=/workspace/config.yaml,type=bind,type=bind,readonly"
+  ],
+
+  "containerEnv": {
+    "KUBECONFIG": "/root/.kube/config"
+  }
+}

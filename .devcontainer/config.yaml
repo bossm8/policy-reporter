@@ -1,0 +1,10 @@
+target:
+  discord:
+    config:
+      webhook: "redacted"
+      skipTLS: false
+    name: "discord"
+    minimumSeverity: "info"
+    skipExistingOnStartup: false
+logging:
+  level: -1
